@@ -15,24 +15,23 @@
             color: #4a2c2a;
             margin: 0;
             padding: 0;
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
         }
         .header {
             background-color: #e86f4d;
             width: 100%;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 50px 0;
         }
         .header h1 {
-            font-size: 4em;
+            font-size: 3.5em;
             color: white;
-            align-items: center;
-            padding-top: 100px;
-            padding-bottom: 100px;
-            margin-bottom: 2%;
+            margin: 0;
         }
         .product-section {
             display: flex;
@@ -44,16 +43,14 @@
             border-radius: 15px;
             text-align: center;
             margin: 2%;
-      		
+            max-width: 600px;
+            width: 90%;
         }
         .product-section img {
-            display: flex;
-            max-width: 80%;
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
             margin-bottom: 20px;
-            margin-left: 10%;
-            margin-right: 10%;
         }
         .product-title {
             font-size: 2.5em;
@@ -61,22 +58,19 @@
             color: #4a2c2a;
             margin-bottom: 20px;
         }
-        .product-description {
+        .product-price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e86f4d;
+            margin-bottom: 15px;
+        }
+        .product-description, .product-summary {
             font-size: 1.2em;
             color: #7f4c43;
-            margin-bottom: 30px;
             line-height: 1.6;
-      		text-align: justify;
-      		margin-left: 5%;
-      		margin-right: 5%;
-        }
-        .product-summary {
-            font-size: 1em;
-            color: #4a2c2a;
-            margin-bottom: 20px;
-      		text-align: justify;
-      		margin-left: 5%;
-      		margin-right: 5%;
+            text-align: justify;
+            margin: 0 5%;
+            margin-bottom: 30px;
         }
         .button {
             display: inline-block;
@@ -91,33 +85,44 @@
         .button:hover {
             background-color: #d65a3b;
         }
+        .promo-section {
+            margin: 2%;
+            padding: 30px 20px;
+            background-color: #e86f4d;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .promo-section h2 {
+            font-size: 1.8em;
+            color: #4a2c2a;
+            margin-bottom: 15px;
+        }
+        .promo-section p {
+            font-size: 1.1em;
+            color: #eee;
+            margin: 5px 0;
+        }
         .footer {
             margin-top: 30px;
             text-align: center;
-      		padding-bottom: 30px;
+            padding: 30px 0;
+            background-color: #e86f4d;
+            width: 100%;
         }
         .footer a {
             color: #4a2c2a;
             text-decoration: none;
             font-size: 1em;
         }
-        @media (max-width: 768px) {
-            .product-section {
-                padding: 30px 15px;
-            }
-            .product-title {
-                font-size: 2em;
-            }
-            .product-description {
-                font-size: 1.1em;
-            }
-        }
         .qa-section {
             margin: 2%;
-            padding: 50px 20px;
+            padding: 30px 20px;
             background-color: #e86f4d;
             border-radius: 15px;
             box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
         }
         .qa-section h2 {
             text-align: center;
@@ -138,6 +143,13 @@
             padding-left: 20px;
             color: #ffffff;
         }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5em; }
+            .product-section { padding: 30px 15px; }
+            .product-title { font-size: 2em; }
+            .product-description, .product-summary { font-size: 1.1em; }
+            .promo-section p { font-size: 1em; }
+        }
     </style>
 </head>
 <body>
@@ -149,49 +161,56 @@
     <section class="product-section">
         <img src="./src/exclusive-product.jpg" alt="Exclusive Product">
         <div class="product-title">THE ANGEL LIGHT MAGNET</div>
+        <div class="product-price">Only £13.95 (excluding shipping)</div>
         <div class="product-description">
             Thousands of people around the world treasure the Christmas lights, with the moment the Angel Lights illuminate the skies marking the true beginning of the festive season. In celebration of this, a special limited-edition 2024 fridge magnet has been designed, capturing the radiant beauty of the iconic Angel Lights.
         </div>
         <div class="product-summary">
-            The Angel Lights will shine from 9 November 2024, with displays turned on each evening on a timed schedule for a more sustainable experience. Enjoy the sparkling decorations until 5 January, with displays on Jermyn Street remaining until 2 January."
+            The Angel Lights will shine from 9 November 2024, with displays turned on each evening on a timed schedule for a more sustainable experience. Enjoy the sparkling decorations until 5 January, with displays on Jermyn Street remaining until 2 January.
         </div>
         <a href="https://book.stripe.com/aEU6pE1HhcNW86sbIK" class="button">Book Now</a>
     </section>
 
+    <section class="promo-section">
+        <h2>Exclusive Promotions</h2>
+        <p>Use discount code <strong>HELLO2025</strong> for 2 items at 5% off each!</p>
+        <p>Share with friends and enjoy bigger discounts:</p>
+        <p>Use code <strong>FRIEND10</strong> for 5 items at 10% off each!</p>
+        <p>Use code <strong>FRIEND15</strong> for 10 items at 15% off each!</p>
+    </section>
 
     <div class="qa-section">
         <h2>Q & A</h2>
         <dl>
-        <dt>Q1: How can I purchase  mangnets?</dt>
-        <dd>A1: To purchase our mangnets, simply click the "Book Now" button under the mangnets you’re interested in. This will take you directly to the purchase page.</dd>
-        
-        <dt>Q2: How long does delivery take?</dt>
-        <dd>A2: Delivery typically takes 3-5 days after placing your order. Since the items are small, they are usually delivered to your mailbox. However, they may also be left at the reception, delivery point, or another secure location. It's a good idea to check your mailbox after ordering. If you have any questions, please feel free to contact us.</dd>
+            <dt>Q1: How can I purchase magnets?</dt>
+            <dd>A1: To purchase, simply click the "Book Now" button under the magnets. This will take you directly to the purchase page.</dd>
+            
+            <dt>Q2: How long does delivery take?</dt>
+            <dd>A2: Delivery typically takes 3-5 days after placing your order. Check your mailbox or secure location as items may be left there.</dd>
 
-        <dt>Q3: Will I receive a confirmation email after placing an order?</dt>
-        <dd>A3: You will receive a confirmation email once your order has been dispatched or shipped, usually 1-2 days after the order is placed.</dd>
+            <dt>Q3: Will I receive a confirmation email?</dt>
+            <dd>A3: Yes, you’ll receive a confirmation email once your order has been shipped, usually 1-2 days after order placement.</dd>
 
-        <dt>Q4: How can I make contact if I have questions?</dt>
-        <dd>A4: For any inquiries, customer@thekpc.com.</dd>
-      
-        <dt>Q5: What is your return and exchange policy?</dt>
-        <dd>A5: Currently, we do not support returns or exchanges for non-quality issues.</dd>
+            <dt>Q4: How can I contact you if I have questions?</dt>
+            <dd>A4: Feel free to reach out at customer@thekpc.com for any inquiries.</dd>
 
-        <dt>Q6: What should I do if there’s an error with my address?</dt>
-        <dd>A6: Please contact us as soon as possible. We recommend double-checking your address and postal code when placing your order. Please ensure your contact information is up-to-date. Ultimately, you are be able to request "delivery options" on Royal Mail Page, and re-delivery to the correct address.</dd>
+            <dt>Q5: What is your return policy?</dt>
+            <dd>A5: We currently do not support returns or exchanges for non-quality issues.</dd>
 
-        <dt>Q7: Do we accept international orders?</dt>
-        <dd>A7: We currently only accept orders within the UK.</dd>
+            <dt>Q6: What should I do if there’s an error with my address?</dt>
+            <dd>A6: Please contact us immediately to correct your address. Alternatively, use "delivery options" on Royal Mail’s website for re-delivery.</dd>
 
-        <dt>Q8: Is there an additional discount for becoming a distributor?</dt>
-        <dd>A7: Yes, we offer distributor discounts. If you have large purchase volumes, please feel free to contact us for more details at business@thekpc.com.</dd>
+            <dt>Q7: Do you accept international orders?</dt>
+            <dd>A7: Currently, we accept orders only within the UK.</dd>
+
+            <dt>Q8: Is there a distributor discount?</dt>
+            <dd>A8: Yes, we offer discounts for distributors. Contact us at business@thekpc.com for more details.</dd>
         </dl>
     </div>
     
     <div class="footer">
-        <p>About & Contact: customer@thekpc.com</p>
+        <p>About & Contact: <a href="mailto:customer@thekpc.com">customer@thekpc.com</a></p>
     </div>
-        
 
 </body>
 </html>
